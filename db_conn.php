@@ -1,7 +1,7 @@
 <?php 
-$sName = "localhost";
+$sName = "mysql_db";
 $uName = "root";
-$pass = "";
+$pass = "toor";
 $db_name = "hydro";
 
 try {

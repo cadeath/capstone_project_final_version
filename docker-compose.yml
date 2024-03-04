@@ -17,7 +17,35 @@ services:
       - 8080:80
     networks:
       - capstone
+
+  pma:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: '${DB_HOST}'
+      PMA_USER: '${DB_USERNAME}'
+      PMA_PASSWORD: '${DB_PASSWORD}'
+    ports:
+      - 8081:80
+    networks:
+      - capstone
+
+  mysql_db:
+    image: mysql/mysql-server:8.0
+    environment:
+      MYSQL_HOST: '${DB_HOST}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    volumes:
+      - 'database:/var/lib/mysql'
+      - ./docker/entrypoint/:/docker-entrypoint-initdb.d/
+    networks:
+      - capstone
       
 networks:
   capstone:
     driver: bridge
+
+volumes:
+  database:
