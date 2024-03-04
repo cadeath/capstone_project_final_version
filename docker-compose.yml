@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build: .    
+    volumes:
+      - .:/var/www/html/
+    networks:
+      - capstone
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - .:/var/www/html/
+      - ./docker/capstone.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80
+    networks:
+      - capstone
+      
+networks:
+  capstone:
+    driver: bridge
