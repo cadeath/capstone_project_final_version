@@ -1,5 +1,5 @@
 <?php
-$db_connection = new mysqli("localhost", "root", "", "hydro");
+$db_connection = new mysqli("mysql_db", "user", "password", "hydro");
 
 if (!$db_connection) {
     echo "Connection Failed";

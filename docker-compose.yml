@@ -6,6 +6,8 @@ services:
       - .:/var/www/html/
     ports:
       - 9000
+    depends_on:
+      - mysql_db
     networks:
       - capstone
 

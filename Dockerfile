@@ -12,8 +12,8 @@ RUN docker-php-ext-install \
     mbstring tokenizer \
     json xml 
 
-RUN docker-php-ext-enable mysqli
-
+RUN docker-php-ext-install mysqli && \
+    docker-php-ext-enable mysqli
 
 COPY . /var/www/html/
 
