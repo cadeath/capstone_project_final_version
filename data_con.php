@@ -1,7 +1,7 @@
 <?php
 $conn=new mysqli("mysql_db",
-                "root",
-                "toor",
+                "user",
+                "password",
                 "hydro");
 if(!$conn){
 	echo "Connection Failed";

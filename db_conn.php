@@ -1,7 +1,7 @@
 <?php 
 $sName = "mysql_db";
-$uName = "root";
-$pass = "toor";
+$uName = "user";
+$pass = "password";
 $db_name = "hydro";
 
 try {
