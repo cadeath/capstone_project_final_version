@@ -1,9 +1,3 @@
-<?php include "../data_con.php"; ?>
-<?php include "../data_ret.php"; ?>
-<?php include "../includes/chartdata.php"; ?>
-<?php include "../chartdata.php"; ?>
-<?php include "../average.php"; ?>
-
 <?php 
 session_start(); 
 if(!isset($_SESSION['user_id'])){ 
@@ -11,6 +5,12 @@ if(!isset($_SESSION['user_id'])){
     exit;
 }
 ?>
+
+<?php include "../data_con.php"; ?>
+<?php include "../data_ret.php"; ?>
+<?php include "../includes/chartdata.php"; ?>
+<?php include "../chartdata.php"; ?>
+<?php include "../average.php"; ?>
 
 <!-- Notification-->
 <?php $sql = "SELECT * FROM notifications WHERE status='0' ORDER BY id DESC";
